@@ -165,7 +165,7 @@ export function InvoicesMobileSkeleton() {
 
 export function InvoicesTableSkeleton() {
   return (
-    <div className="mt-6 flow-root">
+    <div className={`${shimmer} relative mt-6 flow-root`}>
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
@@ -215,4 +215,19 @@ export function InvoicesTableSkeleton() {
       </div>
     </div>
   );
+}
+
+export function InvoiceSearchTableSceleton(){
+  return (
+    <div className="w-full">
+      <div className="flex w-full items-center justify-between">
+        <div className={`${shimmer} relative h-[32px] w-[90px] overflow-hidden rounded-md bg-gray-100`}/>
+      </div>
+      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+        <div className={`${shimmer} relative flex-initial basis-10/12 h-[40px] overflow-hidden rounded-md bg-gray-100`}/>
+        <div className={`${shimmer} relative flex-initial basis-2/12 h-[40px] overflow-hidden rounded-md bg-gray-100`}/>
+      </div>
+      <InvoicesTableSkeleton/>
+    </div>
+  )
 }
